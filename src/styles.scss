@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+// @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+// @import "~@angular/material/prebuilt-themes/purple-green.css";
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.text {
+    &.center {
+        text-align: center;
+    }
+    &.bold {
+        font-weight: bold;
+    }
+    &.size20 {
+        font-size: 20px;
+    }
+}
+
+.mat-button {
+    display: block;
+    &.left {
+        float: left;
+        // margin-left: 15px;
+    }
+    &.right {
+        float: right;
+        // margin-right: 15px;
+    }
+}
+
+.full {
+    width: 100%;
+    &.disabled {
+        min-height: 80px;
+        color: black;
+        font-weight: bold;
+        font-size: 26px;
+    }
+}
+.mat-card {
+    cursor: pointer;
+}
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0 4px 1px 0px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}

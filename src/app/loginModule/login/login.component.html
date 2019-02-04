@@ -1,0 +1,34 @@
+<!-- 
+<div class="loginForm">
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Input">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input type="password" matInput placeholder="Textarea">
+    </mat-form-field>
+  </form>
+</div> -->
+
+<mat-card class="login-card">
+  <!-- <mat-card-header> -->
+  <mat-card-title>Member Login</mat-card-title>
+  <!-- </mat-card-header> -->
+  <mat-card-content>
+    <form>
+      <mat-form-field>
+        <input matInput placeholder="Username / Email">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="password" matInput placeholder="Password">
+      </mat-form-field>
+
+      <div class="example-button-row">
+        <button mat-raised-button color="primary">Login</button>
+        <a [routerLink]="['/public']">Cancel</a>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

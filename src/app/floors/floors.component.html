@@ -1,0 +1,25 @@
+<div class="floorsList mdl-layout">
+    <div *ngIf="!isLoaded">
+        Loading floors data
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+    <div *ngIf="isLoaded" class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <h3 class="text center">Floor Status</h3>
+        </div>
+        <mat-card *ngFor="let floor of floors.success.results; let i = index;" [routerLink]="['/floor/', floor.id ]" class="mdl-cell mdl-cell--4-col mdl-cell--6-col-desktop">
+            <mat-card-title>
+                <h3 class="text center">{{ floor.name | uppercase }}</h3>
+            </mat-card-title>
+            <mat-card-content>
+                <p class="text center bold"> <span>{{ floor.amount }}</span> / <span>{{ floor.limit }}</span> </p>
+                <mat-progress-bar mode="determinate" [color]="color[i]" value="{{ (floor.amount / floor.limit) * 100  }}"></mat-progress-bar>
+            </mat-card-content>
+        </mat-card>
+        <div class="mdl-cell mdl-cell--12-col">
+            <button class="full disabled" mat-raised-button disabled>Ground Floor</button>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,12 @@
+mat-card.login-card {
+    display: block;
+    width: 300px;
+    padding: 10px;
+    margin: 50px auto;
+    form {
+        width: 100%;
+        mat-form-field {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+<div class="floorDetails">
+  <div *ngIf="!isLoaded">
+    Loading floors data
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+  <div *ngIf="isLoaded" class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+      <h3 class="text center">Floor Status</h3>
+      <button class="full disabled" mat-raised-button disabled>{{floor.name}}</button>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col">
+      <h4 class="text center">Current status</h4>
+      <p class="text center bold size20"> <span>{{ floor.amount }}</span> / <span>{{ floor.limit }}</span> </p>
+      <mat-progress-bar mode="determinate" [color]="color" value="{{ (floor.amount / floor.limit) * 100  }}"></mat-progress-bar>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col">
+      <h4 class="text center">How many?</h4>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-cell--2-col-tablet">
+      <button class="mat-button right" mat-flat-button color="primary" [disabled]="btnControl.add"
+        (click)="increaseFloorCount()">+</button>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone mdl-cell--4-col-tablet">
+      <mat-form-field class="full text center">
+        <input type="number" matInput placeholder="People count" [(ngModel)]="pCount" min="1" (keyup)="doSomething($event)" (change)="doSomething($event)" >
+      </mat-form-field>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-cell--2-col-tablet">
+      <button class="mat-button left" mat-flat-button color="warn" [disabled]="btnControl.remove" 
+        (click)="decreaseFloorCount()">-</button>
+    </div>
+  </div>
+</div>
